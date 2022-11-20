@@ -38,16 +38,33 @@ function mark(box) {
     }   
 }
 function StartGame() {
-    boardArray = createBoardList(document.getElementById('board-size').value);
+    boardSizeInp = document.getElementById('board-size');
+    boardSize = boardSizeInp.value;
+    if (boardSize < 3) {
+        boardSize = 3;
+        boardSizeInp.value = 3;
+    }
+    else if (boardSize > 20){
+        boardSize = 20;
+        boardSizeInp.value = 20;
+    }
+    boardArray = createBoardList(boardSize);
+    // --------------------
+    winConditionInp = document.getElementById('win-condition');
+    winCondition = document.getElementById('win-condition').value -1;
+    if (winCondition > boardArray.length - 1) {
+        winCondition = boardArray.length - 1;
+        winConditionInp.value = winCondition + 1;
+    } else if (winCondition < 2) {
+        winCondition = 2;
+        winConditionInp.value = winCondition + 1;
+    } else if (winCondition > 7) {
+        winCondition = 7;
+        winConditionInp.value = winCondition + 1;
+    }
     createBoardElement(boardArray);
 }
 function createBoardList(size) {
-    if (size < 3) {
-        size = 3;
-    }
-    else if (size > 20){
-        size = 20;
-    }
     let board = [];
     for (var row = 0; row < size; row++) {
         board[row] = [];

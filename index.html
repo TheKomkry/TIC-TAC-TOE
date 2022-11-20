@@ -14,7 +14,14 @@
         <div class="board" id="board"> <!-- BOARD IS GENERATED HERE --> </div>
         <div class="settings">
             <h2>TIC-TAC-TOE</h2>
-            <input type="number" max="20" min="3" id="board-size" placeholder="size (3-20)">
+            <div>
+                <label>Board size: </label>
+                <input type="number" max="20" min="3" id="board-size" placeholder="3 - 20">
+            </div>
+            <div>
+                <label>Connect number</label>
+                <input type="number" max="8" min="3" id="win-condition" placeholder="3 - 8">
+            </div>
             <button id="play-button" onclick="StartGame()">PLAY</button>
             <script>
                 document.getElementById('board-size').addEventListener('keyup', function(event) {
@@ -25,9 +32,9 @@
             </script>
         </div>
     </div>
-    
+
     <script src="tic-tac-toe.js"></script>
     <script src="Gradient.js"></script>
-    
+
 </body>
 </html>
