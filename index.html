@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="gradient-canvas" data-transition-in></canvas>
+
+    <div class="game-container">
+        <div class="board" id="board"> <!-- BOARD IS GENERATED HERE --> </div>
+        <div class="settings">
+            <h2>TIC-TAC-TOE</h2>
+            <input type="number" max="20" min="3" id="board-size" placeholder="size (3-20)">
+            <button id="play-button" onclick="StartGame()">PLAY</button>
+            <script>
+                document.getElementById('board-size').addEventListener('keyup', function(event) {
+                    if (event.keyCode === 13) {
+                        document.getElementById('play-button').click();
+                    }
+                });
+            </script>
+        </div>
+    </div>
+    
+    <script src="tic-tac-toe.js"></script>
+    <script src="Gradient.js"></script>
+    
+</body>
+</html>
