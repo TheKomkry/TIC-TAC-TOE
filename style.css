@@ -14,6 +14,8 @@
     left: 0;
     z-index: -1;
     /* create hue-rotate animation */
+}
+.hue-rotate {
     animation: hue-rotate 60s infinite linear;
 }
 @keyframes hue-rotate {
@@ -127,6 +129,7 @@
     top: 5%;
     /* to hide use right: 30%; */
     color: white;
+    transition: right 1s ease-in-out;
 }
 .settings h2{
     font-family: Helvetica;
@@ -184,7 +187,87 @@
     color: rgba(255,255,255,.5);
     top: 0;
     left: 10px;
-    z-index: 1;
+    z-index: 2;
     font-size: 5rem;
     height: 85%;
+    cursor: pointer;
 }
+.settings-label h2, .settings-label input, .settings-label button, .settings-label label{
+    pointer-events: none;
+}
+
+.settings-label::before{
+    content: 'SETTINGS';
+    position: absolute;
+    left: -25px;
+    top: 0;
+    width: 7.5%;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.25rem;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    animation: slow-appear 1s ease-in-out;
+}
+@keyframes slow-appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+img.hotkeys-guide{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5%;
+    padding: 5px;
+    filter: opacity(.8);
+}
+img.hotkeys-guide:hover{
+    cursor: pointer;
+    filter: opacity(1);
+}
+
+
+/* OPRAV TO PICO */
+.color-bg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+    margin: 3px 5px 5px 50px;
+    border-radius: 5px;
+    border:1px solid transparent;
+    transition: border .2s ease-in-out;
+    /* display:block; */
+}
+
+.color-bg:hover {
+    /* background: rgba(255,255,255,.5); */
+    border:1px solid #ccc;
+    cursor:pointer;
+}
+.color-bg input[type="checkbox"] {
+    transform: scale(1.75);
+    margin: 0 5px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 750px) {
+    html{
+        font-size: 12px;
+    }
+    .board{
+        width: 90vw;
+        height: 90vw;
+    }
+    .settings{
+        bottom: 0;
+        top: unset;
+    }
+  }
