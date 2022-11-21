@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: #043D5D;
+}
 #gradient-canvas {
     width:100%;
     height:100%;
@@ -44,7 +47,7 @@
     width: 600px; */
     height: 90vh;
     width: 90vh;
-	margin: 2.5vh auto;
+	/* margin: 2.5vh auto; */
     background-color: rgba(0,0,0,.5);
     /* background-color: black; */
     color: #fff;
@@ -221,21 +224,7 @@
         opacity: 1;
     }
 }
-img.hotkeys-guide{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 5%;
-    padding: 5px;
-    filter: opacity(.8);
-}
-img.hotkeys-guide:hover{
-    cursor: pointer;
-    filter: opacity(1);
-}
 
-
-/* OPRAV TO PICO */
 .color-bg{
     display: flex;
     justify-content: space-between;
@@ -245,7 +234,6 @@ img.hotkeys-guide:hover{
     border-radius: 5px;
     border:1px solid transparent;
     transition: border .2s ease-in-out;
-    /* display:block; */
 }
 
 .color-bg:hover {
@@ -265,9 +253,11 @@ img.hotkeys-guide:hover{
     .board{
         width: 90vw;
         height: 90vw;
+        max-width: 90vh;
+        max-height: 90vh;
     }
     .settings{
-        bottom: 0;
+        bottom: 20%;
         top: unset;
     }
   }
