@@ -27,10 +27,11 @@
 .game-container{
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
     /* background: rgb(4,61,93); */
     /* background-color: linear-gradient(45deg, rgba(4,61,93,1) 0%, rgba(3,46,70,1) 33%, rgba(35,182,132,1) 66%, rgba(15,89,94,1) 100%);     */
 }
@@ -124,7 +125,7 @@
     flex-direction: column;
     position: absolute;
     top: 5%;
-    right: 0;
+    /* to hide use right: 30%; */
     color: white;
 }
 .settings h2{
@@ -174,4 +175,16 @@
     font-weight: bold;
     font-size: 1em;
     margin: 15px auto 5px auto;
+}
+.settings .show-hide-gui{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,.5);
+    top: 0;
+    left: 10px;
+    z-index: 1;
+    font-size: 5rem;
+    height: 85%;
 }

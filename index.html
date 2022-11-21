@@ -12,7 +12,7 @@
 
     <div class="game-container">
         <div class="board" id="board"> <!-- BOARD IS GENERATED HERE --> </div>
-        <div class="settings">
+        <div class="settings" id="settings-gui" style="right: 0px">
             <h2>TIC-TAC-TOE</h2>
             <div>
                 <label>Board size: </label>
@@ -23,12 +23,31 @@
                 <input type="number" max="8" min="3" id="win-condition" placeholder="3 - 8">
             </div>
             <button id="play-button" onclick="StartGame()">PLAY</button>
+            <div id="show-hide-gui" class="show-hide-gui" onclick="ShowHideGui(this)">›</div>
             <script>
                 document.getElementById('board-size').addEventListener('keyup', function(event) {
                     if (event.keyCode === 13) {
                         document.getElementById('play-button').click();
                     }
                 });
+                document.getElementById('win-condition').addEventListener('keyup', function(event) {
+                    if (event.keyCode === 13) {
+                        document.getElementById('play-button').click();
+                    }
+                });
+                function ShowHideGui(button){
+                    let elem = document.getElementById('settings-gui');
+                    console.log(elem.style.right)
+                    if (elem.style.right == '0px'){
+                        console.log('con1');
+                        elem.style.right = (getComputedStyle(elem, 'width') * 0.75)+"px";
+                        button.innerHTML = "‹"
+                    } else { //‹ › « »
+                        console.log('con2');
+                        elem.style.right = '0px';
+                        button.innerHTML = "›"
+                    }
+                }
             </script>
         </div>
     </div>
