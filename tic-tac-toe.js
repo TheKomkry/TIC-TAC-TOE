@@ -37,7 +37,17 @@ function mark(box) {
         });
     }   
 }
+function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
+  }
 function StartGame() {
+    openFullscreen(document.querySelector(".game-container"));
     boardSizeInp = document.getElementById('board-size');
     boardSize = boardSizeInp.value;
     if (boardSize < 3) {
