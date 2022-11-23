@@ -47,7 +47,10 @@ function openFullscreen(elem) {
     }
   }
 function StartGame() {
-    openFullscreen(document.querySelector(".game-container"));
+    if (document.getElementById('fullscreen-inp').checked) {
+        openFullscreen(document.querySelector(".game-container"));
+    }
+    ShowHideGui('hide');
     boardSizeInp = document.getElementById('board-size');
     boardSize = boardSizeInp.value;
     if (boardSize < 3) {
