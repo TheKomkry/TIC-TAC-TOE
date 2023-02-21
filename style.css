@@ -24,10 +24,6 @@ button{
 .hue-rotate {
     animation: hue-rotate 60s infinite linear;
 }
-::selection{
-    background: #23B684;
-    filter: hue-rotate(50deg);
-}
 @keyframes hue-rotate {
     from {
         filter: hue-rotate(0deg);
@@ -271,12 +267,12 @@ button{
         transform: translateX(-50%);
 
     }
-    .settings .show-hide-gui{
+    .settings .show-hide-gui {
         transform: rotate(90deg);
         position: absolute;
-        top: -40px;
+        top: -26px;
         left: 0;
         right: 0;
-        height: 5rem;
+        height: 2rem;
     }
   }

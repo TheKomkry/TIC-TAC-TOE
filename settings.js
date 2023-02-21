@@ -2,7 +2,6 @@ function ShowHideGui(state){
     let button = document.getElementById('show-hide-gui');
     let elem = document.getElementById('settings-gui');
     if (document.body.clientWidth > document.body.clientHeight){
-
         if (elem.style.right == '0px' || state == 'hide') {
             elem.style.right = -(elem.clientWidth * 0.85)+"px";
             button.innerHTML = "‹";
@@ -14,19 +13,19 @@ function ShowHideGui(state){
             elem.style.right = '0px';
             button.innerHTML = "›";
             elem.classList.remove('settings-label');
-            document.querySelectorAll('[tabindex]').forEach(e => {
+            document.querySelectorAll('[tabindex]') .forEach(e => {
                 e.setAttribute('tabindex', 'auto');
             });
         }
     } else {
-        if (elem.style.right == '0px' || state == 'hide') {
+        if (elem.style.bottom == '0px' || state == 'hide') {
             elem.style.bottom = -(elem.clientWidth * 0.70)+"px";
             button.innerHTML = "‹";
             document.querySelectorAll('[tabindex]').forEach(e => {
                 e.setAttribute('tabindex', '-1');
             });
-        } else if (elem.style.right == -(elem.clientWidth * 0.85)+"px" || state == 'show') { //‹ › « »
-            elem.style.right = '0px';
+        } else if (elem.style.bottom == -(elem.clientWidth * 0.70)+"px" || state == 'show') { //‹ › « »
+            elem.style.bottom = '0px';
             button.innerHTML = "›";
             elem.classList.remove('settings-label');
             document.querySelectorAll('[tabindex]').forEach(e => {
